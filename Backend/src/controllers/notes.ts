@@ -1,7 +1,6 @@
 import { RequestHandler } from "express";
 import NoteModel from "../models/note";
 import createHttpError from "http-errors";
-import { json } from "envalid";
 import mongoose from "mongoose";
 
 export const getNote :RequestHandler = async (req, res, next) => {
