@@ -1,5 +1,15 @@
+.notesPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notesGrid{
+    width: 100%;
+}
+
 .noteCard{
-    background-color: rgb(255, 221, 147);  
+    background-color: rgb(255, 216, 132);  
 }
 
 .cardBody{
