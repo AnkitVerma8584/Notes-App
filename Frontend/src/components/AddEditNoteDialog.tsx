@@ -1,9 +1,10 @@
 import { Button, Form, Modal } from "react-bootstrap";
 import { Note } from "../models/notes";
-import { useForm } from "react-hook-form";
+import { RegisterOptions, UseFormRegisterReturn, useForm } from "react-hook-form";
 import { NoteInput } from "../network/notes_api";
 import * as NoteApi from "../network/notes_api";
 import { text } from "stream/consumers";
+import TextInputField from "./form/TextInputField";
 
 interface AddEditNoteDialogProps{
     noteToEdit?:Note,
@@ -44,6 +45,15 @@ const AddEditNoteDialog = ({noteToEdit, onDismiss, onNoteSaved}:AddEditNoteDialo
             <Modal.Body>
                 <Form id="addEditNoteForm" onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group className="mb-3">
+                        <TextInputField 
+                            name="title"
+                            label="Title" 
+                            type="text"
+                            placeholder="This is a title"
+                            register={register}
+                            registerOptions={{required:"Required"}}
+                         />
+
                         <Form.Label>Title</Form.Label>
                         <Form.Control
                             type="text"
